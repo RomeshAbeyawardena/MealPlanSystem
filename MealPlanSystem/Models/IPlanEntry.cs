@@ -5,6 +5,7 @@ namespace MealPlanSystem.Models;
 public interface IPlanEntry : ICreated
 {
     Guid? Id { get; set; }
+    Guid? PlanId { get; set; }
     Guid PlanEntryTypeId { get; set; }
     Guid UnitTypeId { get; set; }
     string? Name { get; set; }

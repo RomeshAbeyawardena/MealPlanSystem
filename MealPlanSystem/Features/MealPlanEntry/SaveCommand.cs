@@ -7,6 +7,7 @@ namespace MealPlanSystem.Features.MealPlanEntry;
 public record SaveCommand : IRequest<PlanEntry>, IPlanEntry, IDbCommand
 {
     public Guid? Id { get; set; }
+    public Guid? PlanId { get; set; }
     public Guid PlanEntryTypeId { get; set; }
     public Guid UnitTypeId { get; set; }
     public string? Name { get; set; }

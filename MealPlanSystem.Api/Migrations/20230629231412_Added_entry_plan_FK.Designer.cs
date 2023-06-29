@@ -4,6 +4,7 @@ using MealPlanSystem;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MealPlanSystem.Api.Migrations
 {
     [DbContext(typeof(MealPlanDbContext))]
-    partial class MealPlanDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230629231412_Added_entry_plan_FK")]
+    partial class Added_entry_plan_FK
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

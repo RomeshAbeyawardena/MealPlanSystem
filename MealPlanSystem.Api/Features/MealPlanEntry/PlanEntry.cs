@@ -5,6 +5,7 @@ namespace MealPlanSystem.Api.Features.MealPlanEntry;
 public record PlanEntry : IPlanEntry
 {
     public Guid? Id { get; set; }
+    public Guid? PlanId { get; set; }
     public Guid PlanEntryTypeId { get; set; }
     public Guid UnitTypeId { get; set; }
     public string? Name { get; set; }

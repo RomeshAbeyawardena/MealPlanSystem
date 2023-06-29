@@ -1,4 +1,5 @@
-﻿using MealPlanSystem.Features.MealPlanEntryType;
+﻿using MealPlanSystem.Features.MealPlan;
+using MealPlanSystem.Features.MealPlanEntryType;
 using MealPlanSystem.Models;
 using RST.Attributes;
 using RST.Contracts;
@@ -12,6 +13,7 @@ public record PlanEntry : IPlanEntry, IIdentity
 {
     [Key]
     public Guid? Id { get; set; }
+    public Guid? PlanId { get; set; }
     public Guid PlanEntryTypeId { get; set; }
     public Guid UnitTypeId { get; set; }
     [Required, ColumnDescriptor(System.Data.SqlDbType.NVarChar, 200)]
@@ -25,6 +27,9 @@ public record PlanEntry : IPlanEntry, IIdentity
     public DateTimeOffset? StartDate { get; set; }
     public DateTimeOffset? EndDate { get; set; }
     public DateTimeOffset Created { get; set; }
+    
+    public virtual Plan? Plan { get; set; }
     public virtual PlanEntryType? PlanEntryType { get; set; }
+    
     Guid IIdentity<Guid>.Id { get => Id.GetValueOrDefault(); set => Id = value; }
 }
